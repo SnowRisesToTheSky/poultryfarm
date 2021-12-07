@@ -1,0 +1,7 @@
+* - Site templates/
+**/bin/
+**/obj/
+**/.vs/
+**/node_modules/
+temp/**
+desktop.ini
