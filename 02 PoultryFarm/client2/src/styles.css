@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*Стили таблицы корзины покупателя и таблицы просмтра заказа покупателя*/
+/*1. Ширина и высота ячейки с кол-ом заказа*/
+.my-order-count-cell {
+  height:50px;
+  width:100%;
+}
+
+/*2. Ширина столбца с кол-ом заказа*/
+th.my-order-count-coll{
+  width:11%;
+  min-width: 130px;
+}
+
+/*3. Поле ввода кол-ва заказа*/
+.my-order-count-text-input{
+  height:inherit;
+}
+
+
+/*ПОКА БОЛЬШЕ НЕ ИСПОЛЬЗУЕТСЯ*/
+/*!* 4. Цвет для кнопки уменьния заказа*!*/
+/*.my-order-count-minus{*/
+/*  background-color: RGB(58,189,158);*/
+/*  color:white;*/
+/*}*/
+
+/*!* 5. Цвет для кнопки уменьния заказа, когда курсор над ней*!*/
+/*.my-order-count-minus:hover{*/
+/*  background-color: RGB(36,163,133);*/
+/*  color:white;*/
+/*}*/
+
+/*6. Ширина и высота ячейки с кол-ом заказа*/
+.my-order-line-remove {
+  height:50px;
+  width:100%;
+}

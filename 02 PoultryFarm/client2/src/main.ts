@@ -1,8 +1,12 @@
-//Этот файл выполняется при запуске приложения
-//1. Платформа для запуска модуля
+import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-//2. импорт главного модуля приложения.
+
 import { AppModule } from './app/app.module';
-//3. запуск главного модуля.
-const platform = platformBrowserDynamic();
-platform.bootstrapModule(AppModule);
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));

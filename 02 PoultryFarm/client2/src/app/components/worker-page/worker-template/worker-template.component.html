@@ -1,0 +1,13 @@
+
+<!--Центральная область-->
+<div class="row m-0 p-0 min-vh-100">
+  <!--1. Центральная-левая область-->
+  <div class="col p-0 m-1 bg-light">
+    <router-outlet name="left-nav-outlet"></router-outlet>
+  </div>
+  <!--2. Центральная-правая область-->
+  <div class="col-9 p-0 my-1 mr-1">
+    <router-outlet name="central-content-outlet"></router-outlet>
+<!--    <app-workers></app-workers>-->
+  </div>
+</div>

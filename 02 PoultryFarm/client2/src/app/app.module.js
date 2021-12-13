@@ -12,7 +12,7 @@ import { HomeComponent } from './components/home-2/home.component';
 import { PersonsComponent } from './components/persons-2/persons.component';
 import { RouterModule } from "@angular/router";
 import { routes } from "./app.routes";
-import { DbService } from "./services/db-service";
+import { DbService } from "./services/some/db-service";
 // 2. @NgModule - декоратор, который определяет angular-модуль и некоторые данные
 // для него. Для того чтобы приложение могло выполняться в браузере, текущий
 // модуль (корневой модуль) должен выполнить импорт модуля BrowserModule взятого

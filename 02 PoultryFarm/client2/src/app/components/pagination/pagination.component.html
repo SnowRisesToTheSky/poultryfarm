@@ -1,0 +1,25 @@
+<div class="btn-toolbar" role="toolbar" aria-label="Навигатор по партиям товаров">
+  <!--1. Левая часть пагинатора-->
+  <div class="btn-group mr-2" *ngIf="!!start" role="group" aria-label="Первая партия">
+    <button type="button" class="btn btn-secondary"
+            (click)="goToBatch(start)">
+      {{start}}
+    </button>
+  </div>
+  <!--2. Средняя часть пагинатора-->
+  <div class="btn-group mr-2" role="group" aria-label="Текущие центральные партии">
+    <button type="button"
+            *ngFor="let batchNumber of middle"
+            class="btn btn-secondary {{currentBatchIndex===batchNumber-1?'active':''}}"
+            (click)="goToBatch(batchNumber)">
+      {{batchNumber}}
+    </button>
+  </div>
+  <!--3. Правая часть пагинатора-->
+  <div class="btn-group" *ngIf="!!end" role="group" aria-label="Последняя партия">
+    <button type="button" class="btn btn-secondary"
+            (click)="goToBatch(end)">
+      {{end}}
+    </button>
+  </div>
+</div>

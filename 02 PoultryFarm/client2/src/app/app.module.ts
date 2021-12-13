@@ -5,11 +5,8 @@ import {RouterModule} from "@angular/router";
 import {HttpClientModule} from '@angular/common/http';
 //2. Компоненты
 import {AppComponent} from './app.component';
-import {HomeComponent} from './components/home-2/home.component';
-import {PersonsComponent} from './components/persons-2/persons.component';
 //3. Сервисы и маршруты
-import {routes} from "./app.routes";
-import {DbService} from "./services/db-service";
+import {routes} from "./routing";
 import { ComponentsModule } from './components/components.module';
 import { ServicesModule } from './services/services.module';
 
@@ -29,10 +26,9 @@ import { ServicesModule } from './services/services.module';
     ],
     //1. Список импортированных компонентов (тогда они смогут взаимодействовать друг-
     //с-другом)
-    declarations: [AppComponent, HomeComponent, PersonsComponent],
+    declarations: [AppComponent],
     //2. Тут указывается компонент с которого начинается отображение приложения.
     bootstrap: [AppComponent],
-    providers: [DbService]
 })
 export class AppModule {
 }

@@ -1,0 +1,234 @@
+<!--Форма добавления рабочего-->
+<div class="m-0 p-0">
+  <h4 class="h4 bg-success text-white text-center m-0 p-2 rounded-0 d-block">
+    Добавление рабочего
+  </h4>
+  <form novalidate [formGroup]="addingForm" (ngSubmit)="onSubmit(addingForm)"
+        class="p-0 m-0 bg-light needs-validation {{wasSubmitTrying?'was-validated':''}}">
+    <div class="p-3">
+      <!--1. Ввод фамилии-->
+      <div class="form-group row m-0 p-0 position-relative {{addingForm.get('workerSurname').dirty?'was-validated':''}}">
+        <label for="workerSurname" class="col-2 col-form-label p-0 m-0 mr-2">Фамилия</label>
+        <div class="col-5 p-0 m-0">
+          <!--1. Поле ввода-->
+          <input type="text"
+                 class="form-control"
+                 id="workerSurname"
+                 name="workerSurname"
+                 formControlName="workerSurname"
+                 required
+                 minlength="{{nameMinLenght}}"
+                 maxlength="{{nameMaxLenght}}"
+                 pattern="{{namePattern}}"
+                 placeholder="Скрижаль">
+          <!--2. Сообщение что все хорошо. Показать если нет ошибок и с полем взаимодействовали.-->
+          <div class="valid-feedback" [hidden]="!!addingForm.get('workerSurname').errors">
+            {{validationMessages.surname.ok}}
+          </div>
+          <!--3. Сообщение что есть ошибка паттерна. Показать если есть ошибка и поле грязное-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerSurname').hasError('pattern')">
+            {{validationMessages.surname.pattern}}
+          </div>
+          <!--4. Сообщение что кол-во символов меньше допустимого (меньше двух или не более одного)-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerSurname').hasError('minlength')">
+            {{validationMessages.surname.minlength}}
+          </div>
+          <!--5. Сообщение что кол-во символов меньше допустимого (меньше двух или не более одного)-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerSurname').hasError('maxlength')">
+            {{validationMessages.surname.maxlength}}
+          </div>
+          <!--6. Сообщение что есть ошибка-->
+          <div class="invalid-feedback" [hidden]="!addingForm.get('workerSurname').hasError('required')">
+            {{validationMessages.surname.required}}
+          </div>
+        </div>
+      </div>
+
+
+      <!--2. Ввод имени-->
+      <div class="form-group row m-0 mt-2 p-0 position-relative {{addingForm.get('workerName').dirty?'was-validated':''}}">
+        <label for="workerName" class="col-2 col-form-label p-0 m-0 mr-2">Имя</label>
+        <div class="col-5 p-0 m-0">
+          <!--1. Поле ввода-->
+          <input type="text"
+                 class="form-control"
+                 id="workerName"
+                 name="workerName"
+                 formControlName="workerName"
+                 required
+                 minlength="{{nameMinLenght}}"
+                 maxlength="{{nameMaxLenght}}"
+                 pattern="{{namePattern}}"
+                 placeholder="Карп">
+          <!--2. Сообщение что все хорошо. Показать если нет ошибок и с полем взаимодействовали.-->
+          <div class="valid-feedback" [hidden]="!!addingForm.get('workerName').errors">
+            {{validationMessages.name.ok}}
+          </div>
+          <!--3. Сообщение что есть ошибка паттерна. Показать если есть ошибка и поле грязное-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerName').hasError('pattern')">
+            {{validationMessages.name.pattern}}
+          </div>
+          <!--4. Сообщение что кол-во символов меньше допустимого (меньше двух или не более одного)-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerName').hasError('minlength')">
+            {{validationMessages.name.minlength}}
+          </div>
+          <!--5. Сообщение что кол-во символов меньше допустимого (меньше двух или не более одного)-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerName').hasError('maxlength')">
+            {{validationMessages.name.maxlength}}
+          </div>
+          <!--6. Сообщение что есть ошибка-->
+          <div class="invalid-feedback" [hidden]="!addingForm.get('workerName').hasError('required')">
+            {{validationMessages.name.required}}
+          </div>
+        </div>
+      </div>
+
+
+      <!--3. Ввод отчества-->
+      <div class="form-group row m-0 mt-2 p-0 position-relative {{addingForm.get('workerPatronymic').dirty?'was-validated':''}}">
+        <label for="workerPatronymic" class="col-2 col-form-label p-0 m-0 mr-2">Отчество</label>
+        <div class="col-5 p-0 m-0">
+          <!--1. Поле ввода-->
+          <input type="text"
+                 class="form-control"
+                 id="workerPatronymic"
+                 name="workerPatronymic"
+                 formControlName="workerPatronymic"
+                 required
+                 minlength="{{nameMinLenght}}"
+                 maxlength="{{nameMaxLenght}}"
+                 pattern="{{namePattern}}"
+                 placeholder="Бенедиктович">
+          <!--2. Сообщение что все хорошо. Показать если нет ошибок и с полем взаимодействовали.-->
+          <div class="valid-feedback" [hidden]="!!addingForm.get('workerPatronymic').errors">
+            {{validationMessages.patronymic.ok}}
+          </div>
+          <!--3. Сообщение что есть ошибка паттерна. Показать если есть ошибка и поле грязное-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerPatronymic').hasError('pattern')">
+            {{validationMessages.patronymic.pattern}}
+          </div>
+          <!--4. Сообщение что кол-во символов меньше допустимого (меньше двух или не более одного)-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerPatronymic').hasError('minlength')">
+            {{validationMessages.patronymic.minlength}}
+          </div>
+          <!--5. Сообщение что кол-во символов меньше допустимого (меньше двух или не более одного)-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerPatronymic').hasError('maxlength')">
+            {{validationMessages.patronymic.maxlength}}
+          </div>
+          <!--6. Сообщение что есть ошибка-->
+          <div class="invalid-feedback" [hidden]="!addingForm.get('workerPatronymic').hasError('required')">
+            {{validationMessages.patronymic.required}}
+          </div>
+        </div>
+      </div>
+
+
+      <!--4. Ввод паспорта-->
+      <div class="form-group row m-0 mt-2 p-0 position-relative {{addingForm.get('workerPassport').dirty?'was-validated':''}}">
+        <label for="workerPassport" class="col-2 col-form-label p-0 m-0 mr-2">Паспорт</label>
+        <div class="col-5 p-0 m-0">
+          <!--1. Поле ввода-->
+          <input type="text"
+                 class="form-control"
+                 id="workerPassport"
+                 name="workerPassport"
+                 formControlName="workerPassport"
+                 required
+                 minlength="{{passportMinLenght}}"
+                 maxlength="{{passportMaxLenght}}"
+                 pattern="{{passportPattern}}"
+                 placeholder="WQER95867384">
+          <!--2. Сообщение что все хорошо. Показать если нет ошибок и с полем взаимодействовали.-->
+          <div class="valid-feedback" [hidden]="!!addingForm.get('workerPassport').errors">
+            {{validationMessages.pasport.ok}}
+          </div>
+          <!--3. Сообщение что есть ошибка паттерна. Показать если есть ошибка и поле грязное-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerPassport').hasError('pattern')">
+            {{validationMessages.pasport.pattern}}
+          </div>
+          <!--4. Сообщение что кол-во символов меньше допустимого (меньше двух или не более одного)-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerPassport').hasError('minlength')">
+            {{validationMessages.pasport.minlength}}
+          </div>
+          <!--5. Сообщение что кол-во символов меньше допустимого (меньше двух или не более одного)-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerPassport').hasError('maxlength')">
+            {{validationMessages.pasport.maxlength}}
+          </div>
+          <!--6. Сообщение что есть ошибка-->
+          <div class="invalid-feedback" [hidden]="!addingForm.get('workerPassport').hasError('required')">
+            {{validationMessages.pasport.required}}
+          </div>
+        </div>
+      </div>
+
+
+      <!--4. Ввод зарплаты-->
+      <div class="form-group row m-0 mt-2 p-0 position-relative {{addingForm.get('workerSalary').dirty?'was-validated':''}}">
+        <label for="workerSalary" class="col-2 col-form-label p-0 m-0 mr-2">Зарплата</label>
+        <div class="col-5 p-0 m-0">
+          <!--1. Поле ввода-->
+          <input type="text"
+                 class="form-control"
+                 id="workerSalary"
+                 name="workerSalary"
+                 formControlName="workerSalary"
+                 required
+                 pattern="{{salaryPattern}}"
+                 minlength="{{salaryMinLenght}}"
+                 placeholder="10000">
+          <!--2. Сообщение что все хорошо. Показать если нет ошибок и с полем взаимодействовали.-->
+          <div class="valid-feedback" [hidden]="!!addingForm.get('workerSalary').errors">
+            {{validationMessages.salary.ok}}
+          </div>
+          <!--3. Сообщение что есть ошибка паттерна. Показать если есть ошибка и поле грязное-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerSalary').hasError('pattern')">
+            {{validationMessages.salary.pattern}}
+          </div>
+          <!--4. Сообщение что кол-во символов меньше допустимого-->
+          <div class="invalid-feedback"
+               [hidden]="!addingForm.get('workerSalary').hasError('minlength')">
+            {{validationMessages.salary.minlength}}
+          </div>
+          <!--5. Сообщение что есть ошибка-->
+          <div class="invalid-feedback" [hidden]="!addingForm.get('workerSalary').hasError('required')">
+            {{validationMessages.salary.required}}
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="row m-2">
+      <!--1. Кнопка добавления-->
+      <button type="submit" class="btn btn-outline-success btn-lg text-center col m-0 mr-2"
+              title="Добавить работника">
+        Добавить
+      </button>
+      <!--2. Кнопка отмены-->
+      <button type="reset" class="btn btn-outline-secondary btn-lg text-center col m-0"
+              title="Отменить добавление" (click)="clearFields()">
+        Отменить
+      </button>
+      <!--3. Кнопка возврата-->
+      <button type="button" class="btn btn-warning btn-lg btn-block m-0 mt-2"
+              title="Вернуться к списку рабочих" (click)="toRecordList()">
+        Вернуться
+      </button>
+    </div>
+  </form>
+</div>

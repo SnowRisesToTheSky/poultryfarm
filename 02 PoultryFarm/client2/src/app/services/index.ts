@@ -1,2 +1,2 @@
-export * from './db-service';
 export * from './services.module';
+export * from './server/workers.service';
